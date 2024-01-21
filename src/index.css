@@ -25,11 +25,13 @@ body {
 
 h1 {
   font-family: "Handjet", monospace;
+  letter-spacing: 0.3rem;
+  opacity: 90%;
   text-align: center;
   text-transform: uppercase;
   color: #f8f8f8;
   text-shadow: 0 0 4px rgba(35, 34, 34, 0.4);
-  font-size: 3.5rem;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -47,10 +49,6 @@ header p {
 
 #player {
   text-align: center;
-}
-
-#player h2 {
-  color: #f8f8f8;
 }
 
 #player p {
@@ -142,4 +140,87 @@ header p {
 
 .challenge .active {
   animation: flash 1s infinite;
+}
+
+.result-modal {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: #e8e4f8;
+  box-shadow: 16px 16px 80px rgba(255, 255, 255, 0.6),
+    -16px -16px 80px rgba(255, 255, 255, 0.6);
+}
+
+.result-modal[open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+
+.result-modal::backdrop {
+  background: radial-gradient(#272462, #161233);
+  opacity: 80%;
+}
+
+.result-modal h2 {
+  font-family: "Handjet", monospace;
+  margin: 0 0 0.25rem 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.result-modal progress {
+  width: 100%;
+  height: 1.5rem;
+  margin: 0;
+  accent-color: #6b50ce;
+}
+
+.result-modal p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.result-modal p strong {
+  color: #4f2a9f;
+}
+
+.result-modal form {
+  text-align: right;
+}
+
+.result-modal button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #3d37a4;
+  color: #f8f8f8;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.result-modal button:hover {
+  background-color: #221e21;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }

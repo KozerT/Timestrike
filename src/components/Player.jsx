@@ -13,7 +13,7 @@ const Player = () => {
   return (
     <div id="content">
       <section id="player">
-        <h2>Welcome {enteredPlayerName ?? "user"}</h2>
+        <h1>Welcome {enteredPlayerName ?? "user"}</h1>
         <p>
           <input type="text" className="player__input" ref={playerName} />
           <button className="player__button" onClick={handleClick}>
